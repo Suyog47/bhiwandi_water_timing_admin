@@ -166,13 +166,17 @@ class _DashboardState extends State<Dashboard> {
                               children: arr,
                             ),
                           ],
-                        ) : const Text(
-                          "No timings are set for this area",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                        ) : const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 30.0),
+                          child: Text(
+                            "No timings are set for this area",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 17,
+                              letterSpacing: 1.7
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
                         ),
                         height30,
                         Column(
