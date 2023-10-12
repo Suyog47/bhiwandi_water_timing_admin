@@ -17,3 +17,5 @@ const Color greenColor = Colors.green;
 const Color lightGreyColor = Color(0xFFE7E7E7);
 
 const Color mediumGreyColor = Color(0xFFACABAB);
+
+const Color amberColor = Colors.amber;

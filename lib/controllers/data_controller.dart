@@ -32,6 +32,7 @@ class DataController {
 
   Future addTiming(String from, String till) async {
     try {
+      load.value = 1;
       await DataApiCalls()
           .addTiming(currentAreaId, from, till)
           .then((value) {
@@ -46,11 +47,14 @@ class DataController {
           response = "failure";
         }
       });
-    } finally {}
+    } finally {
+      load.value = 0;
+    }
   }
 
   Future editTiming(String id, String from, String till) async {
     try {
+      load.value = 1;
       await DataApiCalls()
           .editTiming(id, from, till)
           .then((value) {
@@ -65,11 +69,14 @@ class DataController {
           response = "failure";
         }
       });
-    } finally {}
+    } finally {
+      load.value = 0;
+    }
   }
 
   Future deleteTiming(String id) async {
     try {
+      load.value = 1;
       await DataApiCalls()
           .deleteTiming(id)
           .then((value) {
@@ -84,11 +91,14 @@ class DataController {
           response = "failure";
         }
       });
-    } finally {}
+    } finally {
+      load.value = 0;
+    }
   }
 
   Future saveNews(String news) async {
     try {
+      load.value = 1;
       await DataApiCalls()
            .saveNews(currentAreaId, news)
           .then((value) {
@@ -103,12 +113,15 @@ class DataController {
           response = "failure";
         }
       });
-    } finally {}
+    } finally {
+      load.value = 0;
+    }
   }
 
   Future getAllData() async {
     data.clear();
     try {
+      load.value = 1;
       await DataApiCalls().getAllData().then((value) {
         if (value != "error") {
           dynamic res = jsonDecode(value);
@@ -123,7 +136,9 @@ class DataController {
           response = "failure";
         }
       });
-    } finally {}
+    } finally {
+      load.value = 0;
+    }
   }
 
   void getAreas(List dt) {
