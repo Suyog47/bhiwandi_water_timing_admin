@@ -1,10 +1,11 @@
+import 'package:BWT_admin/constants/colors.dart';
+import 'package:BWT_admin/constants/heights.dart';
+import 'package:BWT_admin/constants/size_helpers.dart';
+import 'package:BWT_admin/controllers/internet_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:water_timing/constants/colors.dart';
-import 'package:water_timing/constants/heights.dart';
-import 'package:water_timing/constants/size_helpers.dart';
-import 'package:water_timing/controllers/internet_controller.dart';
+
 
 class InternetCheck extends StatefulWidget {
   final Widget? child;
