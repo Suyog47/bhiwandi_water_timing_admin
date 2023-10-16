@@ -3,6 +3,7 @@ import 'package:BWT_admin/controllers/data_controller.dart';
 import 'package:BWT_admin/controllers/internet_controller.dart';
 import 'package:BWT_admin/screens/dashboard.dart';
 import 'package:BWT_admin/screens/internet_connectivity_screen.dart';
+import 'package:BWT_admin/utils/navigations.dart';
 import 'package:BWT_admin/utils/shared_preference_data.dart';
 import 'package:BWT_admin/utils/snackbars.dart';
 import 'package:BWT_admin/widgets/loaders.dart';
@@ -34,12 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
       if (_dataController.response == 'success') {
         Future.delayed(const Duration(seconds: 1), () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const Dashboard(),
-            ),
-          );
+        Navigate().toDashboard(context);
         });
       }
       else {

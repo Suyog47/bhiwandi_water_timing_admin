@@ -4,6 +4,7 @@ import 'package:BWT_admin/constants/size_helpers.dart';
 import 'package:BWT_admin/controllers/data_controller.dart';
 import 'package:BWT_admin/screens/dashboard.dart';
 import 'package:BWT_admin/utils/date_time_function.dart';
+import 'package:BWT_admin/utils/navigations.dart';
 import 'package:BWT_admin/utils/snackbars.dart';
 import 'package:BWT_admin/widgets/custom_container.dart';
 import 'package:BWT_admin/widgets/loaders.dart';
@@ -218,11 +219,7 @@ class _AddUpdateScreenState extends State<AddUpdateScreen> {
       } else {
         await _editTime();
       }
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const Dashboard()),
-              (route) => false);
+      Navigate().toDashboard(context);
     } else {
       CustomSnackBar().alert(
           "Start time cannot be later than or equal to End time",
