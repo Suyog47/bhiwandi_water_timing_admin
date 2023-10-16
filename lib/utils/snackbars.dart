@@ -1,5 +1,6 @@
+import 'package:BWT_admin/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:water_timing/constants/colors.dart';
+
 
 class CustomSnackBar {
   void alert(String msg, BuildContext context, {Color color = greenColor}) {

@@ -1,7 +1,6 @@
 import 'dart:io';
-
+import 'package:BWT_admin/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:water_timing/screens/splash_screen.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override

@@ -1,14 +1,16 @@
+import 'package:BWT_admin/constants/colors.dart';
+import 'package:BWT_admin/constants/heights.dart';
+import 'package:BWT_admin/constants/size_helpers.dart';
+import 'package:BWT_admin/controllers/data_controller.dart';
+import 'package:BWT_admin/screens/dashboard.dart';
+import 'package:BWT_admin/utils/date_time_function.dart';
+import 'package:BWT_admin/utils/navigations.dart';
+import 'package:BWT_admin/utils/snackbars.dart';
+import 'package:BWT_admin/widgets/custom_container.dart';
+import 'package:BWT_admin/widgets/loaders.dart';
 import 'package:flutter/material.dart';
-import 'package:water_timing/constants/colors.dart';
-import 'package:water_timing/constants/heights.dart';
-import 'package:water_timing/constants/size_helpers.dart';
-import 'package:water_timing/controllers/data_controller.dart';
-import 'package:water_timing/screens/dashboard.dart';
-import 'package:water_timing/utils/date_time_function.dart';
-import 'package:water_timing/utils/snackbars.dart';
-import 'package:water_timing/widgets/custom_container.dart';
 import 'package:get/get.dart';
-import 'package:water_timing/widgets/loaders.dart';
+
 
 class AddUpdateScreen extends StatefulWidget {
   final String cameFor;
@@ -217,11 +219,7 @@ class _AddUpdateScreenState extends State<AddUpdateScreen> {
       } else {
         await _editTime();
       }
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const Dashboard()),
-              (route) => false);
+      Navigate().toDashboard(context);
     } else {
       CustomSnackBar().alert(
           "Start time cannot be later than or equal to End time",
