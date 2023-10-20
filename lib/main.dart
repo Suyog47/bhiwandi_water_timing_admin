@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:BWT_admin/screens/splash_screen.dart';
+import 'package:BWT_admin/utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -22,9 +24,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Demo',
-      home: SplashScreen(),
+    return GetMaterialApp(
+      routes: Routes().createRoutes(),
+      initialRoute: '/splash',
       debugShowCheckedModeBanner: false,
     );
   }

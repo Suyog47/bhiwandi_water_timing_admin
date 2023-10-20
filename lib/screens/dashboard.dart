@@ -60,7 +60,7 @@ class _DashboardState extends State<Dashboard> {
                 padding: const EdgeInsets.only(right: 10.0),
                 child: InkWell(
                   onTap: () {
-                    Navigate().toAddUpdate(context, {
+                    Navigate().toAddUpdate({
                       'from': TimeOfDay.now(),
                       'till': TimeOfDay.now(),
                       'cameFor': 'add'
@@ -353,7 +353,7 @@ class _DashboardState extends State<Dashboard> {
     final TimeOfDay from = TimeConversion().convertTo24Hr(fromTime);
     final TimeOfDay till = TimeConversion().convertTo24Hr(tillTime);
 
-    Navigate().toAddUpdate(context,
+    Navigate().toAddUpdate(
         {'from': from, 'till': till, 'cameFor': 'edit', 'timingId': id});
   }
 
